@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-   <title>
-      DDMAL &middot; Distributed Digital Music Archives & Libraries Lab
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Redirecting to DDMAL</title>
     <link rel="canonical" href="http://ddmal.ca">
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+    
+      .message {
+        padding: 2rem;
+        border-radius: 1rem;
+        background: oklch(96.2% 0.059 95.617);
+      }
+    </style>
   </head>
 
   <body>
-    <script type="text/javascript">
-        window.location.replace("https://ddmal.ca");
+    <div class="message">
+      <p>DDMAL (Distributed Digital Music Archives & Libraries Lab) Homepage is now at <a href="https://example.com"><strong>https://ddmal.ca</strong></a></p>
+      <p>Please update your bookmarks! </p>
+      <hr>
+      <p>Redirecting in <span id="countdown">10</span> seconds.</p>
+    </div>
+
+    <script>
+      let secondsLeft = 10;
+      const countdownEl = document.getElementById("countdown");
+
+      const countdownInterval = setInterval(function() {
+        secondsLeft--;
+        countdownEl.textContent = secondsLeft;
+
+        if (secondsLeft <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = "https://ddmal.ca";
+        }
+      }, 1000);
     </script>
   </body>
 </html>
+
+
